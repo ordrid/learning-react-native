@@ -1,10 +1,9 @@
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <View style={styles.blueView}></View>
-      <View style={styles.greenView}></View>
+      <Text><Text style={{ color: 'white'}}>Hello</Text> World</Text>
     </View>
   );
 }
@@ -16,16 +15,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  blueView: {
-    width: 200,
-    height: 200,
-    backgroundColor: 'lightblue',
-    margin: 4
-  },
-  greenView: {
-    width: 200,
-    height: 200,
-    backgroundColor: 'lightgreen',
-    margin: 4
-  }
 });
