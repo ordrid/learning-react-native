@@ -1,22 +1,11 @@
-import { useState } from "react";
-import { Button, StyleSheet, StatusBar, View } from "react-native";
+import { ActivityIndicator, StyleSheet, View } from "react-native";
 
 export default function App() {
-  const [isStatusBarVisible, setStatusBarVisibility] = useState(false);
-
   return (
     <View style={styles.container}>
-      <StatusBar
-        backgroundColor="lightgreen"
-        barStyle="light-content"
-        hidden={isStatusBarVisible}
-      />
-
-      <Button
-        title="Toggle statusbar visibility"
-        onPress={() => setStatusBarVisibility(!isStatusBarVisible)}
-        color="midnightblue"
-      />
+      <ActivityIndicator />
+      <ActivityIndicator size="small" color="midnightblue" animating={false} />
+      <ActivityIndicator size="large" color="lightgreen" />
     </View>
   );
 }
