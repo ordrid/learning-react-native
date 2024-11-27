@@ -1,32 +1,22 @@
 import { useState } from "react";
-import { Button, Modal, StyleSheet, Text, View } from "react-native";
+import { Button, StyleSheet, StatusBar, View } from "react-native";
 
 export default function App() {
-  const [isModalVisible, setModalVisible] = useState(false);
+  const [isStatusBarVisible, setStatusBarVisibility] = useState(false);
 
   return (
     <View style={styles.container}>
-      <Button
-        title="Press"
-        onPress={() => setModalVisible(true)}
-        color="midnightblue"
+      <StatusBar
+        backgroundColor="lightgreen"
+        barStyle="light-content"
+        hidden={isStatusBarVisible}
       />
 
-      <Modal
-        visible={isModalVisible}
-        onRequestClose={() => setModalVisible(false)}
-        animationType="slide"
-        presentationStyle="pageSheet"
-      >
-        <View style={{ flex: 1, backgroundColor: "lightblue", padding: 60 }}>
-          <Text>Modal Content</Text>
-          <Button
-            title="Close"
-            color="midnightblue"
-            onPress={() => setModalVisible(false)}
-          />
-        </View>
-      </Modal>
+      <Button
+        title="Toggle statusbar visibility"
+        onPress={() => setStatusBarVisibility(!isStatusBarVisible)}
+        color="midnightblue"
+      />
     </View>
   );
 }
